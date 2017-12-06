@@ -7,7 +7,7 @@
 
 body {
     width: 100%;
-    font-family: Open Sans, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     padding: 0; 
     text-align: center;
 }
@@ -24,6 +24,10 @@ header {
 h1 {
     display: inline-block;
     font-size: 44px;
+}
+
+#level-three-input {
+    visibility: hidden;
 }
 
 .num {
@@ -150,6 +154,8 @@ h1 {
     visibility: hidden;
 }
 
+.game-over {
 
+}
 
 
