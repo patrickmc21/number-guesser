@@ -131,7 +131,7 @@ function contextCorrect (){
     }
 };
 
-// Level two 
+// Level two start
 
 function contextCorrectTwo (){
     var el = (isNaN(parseInt(userInput.value)));
