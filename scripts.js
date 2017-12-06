@@ -1,3 +1,5 @@
+//  declare global variables
+
 var clickGuess = document.getElementById('guess');
 var clickClear = document.getElementById('clear');
 var clickReset = document.getElementById('reset');
@@ -10,8 +12,12 @@ var clickRandom = document.getElementById('generate-random');
 var form = document.querySelector('form');
 var levelUp = document.getElementById('level-start');
 
+// functions run on page load
+
 storeRandom (100, 0);
 disableButton();
+
+// event listeners
 
 num.addEventListener('keyup', function(){
     clickClear.disabled = false;
@@ -23,6 +29,8 @@ clickGuess.addEventListener('click', function(event){
 clickGuess.addEventListener('click', contextCorrect);
 clickClear.addEventListener('click', clear);
 clickReset.addEventListener('click', reset);
+
+// functions
 
 function backgroundAdd (x){
     form.classList.add(x);
