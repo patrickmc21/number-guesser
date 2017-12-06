@@ -48,6 +48,21 @@ h1 {
     color: #929497;
 }
 
+#level-three-input {
+    margin: auto;
+    height: 30px;
+    width: 350px;
+    font-size: 24px;
+    font-weight: 300;
+    color: #929497;
+}
+
+#min,
+#max {
+    width: 60px;
+    border: 1px solid #929497;
+}
+
 #top {
     margin-top: 3%;
 }
@@ -115,32 +130,6 @@ h1 {
     background-color: #929497;
     font-size: 20px;
     font-weight: 200;
-
-}
-
-#winner {
-    display: inline-block;
-    visibility: hidden;
-}
-
-#winner img {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-
-}
-
-#img-left {
-    position: absolute;
-    top: 300px;
-    left: 130px;
-    text-align: left;
-}
-#img-right{
-    position: absolute;
-    top: 300px;
-    right: 130px;
-    text-align: right;
 }
 
 .cold {

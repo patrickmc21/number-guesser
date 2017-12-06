@@ -97,6 +97,7 @@ function logic (){
             if (guessedNumber == randomNum) {
                 userInput.value = '';
                 levelCounter = levelCounter + 1
+                console.log(levelCounter + ' lc')
                 currentLevel = 'level ' + levelCounter;
                 guessDeclaration.innerText = 'BOOM!';
                 backgroundRemove ('cold');
@@ -172,7 +173,22 @@ function levelTwo (){
     levelUp.style.visibility = 'hidden';
 };
 
+// Level Three
 
+function levelThree (){
+    var userMin = document.getElementById('min');
+    var userMax = document.getElementById('max');
+    max = 
+    console.log (currentLevel);
+    randomNum = 0;
+    console.log(randomNum + ' level 3 init');
+    storeRandom();
+    console.log(randomNum + ' level 3 rando');
+    clear ();
+    interactiveZone.style.visibility = 'hidden';
+    backgroundRemove ('winner-guess');
+    levelUp.style.visibility = 'hidden';
 
+}
 
 
