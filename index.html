@@ -1,0 +1,43 @@
+<!doctype html>
+    <html lang="en">
+        <head>
+            <title>Guess Numbers!</title>
+            <link rel="stylesheet" type="text/css" href="main.css">
+     </head>
+        <body>
+            <form>
+                <header>
+                    <h1 class="num">Number</h1>
+                    <h1 class="guess">Guesser</h1>
+                </header>
+                <main>
+                        <section>
+                            <p id = "error"></p>
+                            <article id="top">
+                                <input type="text" name="number-entry" id="num" placeholder="Enter your guess">
+                                <br>
+                            <article>
+                                <input type="submit" id="guess" value="Guess">
+                                <input type="reset" id="clear" value="Clear">
+                            </article>
+                            <button id="level-start"></button>
+                            </article>
+                        </section>
+                        <section id="user-input">
+                            <article id="last-guess">
+                                <p> Your last guess was</p>
+                            </article>
+                            <article id="last-guess-num">
+                                <p id="user-guess"></p>
+                            </article>
+                            <article id="declaration"> <p id="hot-cold"></p>
+                            </article>
+                        </section>
+                </main>
+                <footer>
+                    <button type="reset" id="reset"> Reset</button>
+                </footer>
+        </form>
+            <script type="text/javascript" src="scripts.js"></script>
+           </body>
+    </html>

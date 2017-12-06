@@ -1,0 +1,166 @@
+*,
+*:after,
+*:before {
+  margin:0;  
+  box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    font-family: Open Sans, sans-serif;
+    padding: 0; 
+    text-align: center;
+}
+header {
+    position: relative;
+    top: 0;
+    border: 0;
+    margin: 0;
+    padding: 1%;
+    background-color: #404041;
+    text-align: center;
+}
+
+h1 {
+    display: inline-block;
+    font-size: 44px;
+}
+
+.num {
+    color: #ED458B;
+    margin-right: 1%;
+    font-weight: 700;
+}
+
+.guess {
+        color: #E6E7E8; 
+        margin-left: 1%;
+        font-weight: 300;
+}
+
+
+#num {
+    height: 30px;
+    width: 350px;
+    font-size: 24px;
+    font-weight: 300;
+    border: 1px solid #929497;
+    color: #929497;
+}
+
+#top {
+    margin-top: 3%;
+}
+
+#guess,
+#clear,
+#level-start {
+    border-radius: 15px;
+    margin-top: 1%;
+    margin-right: 9px;
+    margin-left: 5px;
+    color: white;
+    background-color: #929497;
+    height: 26px;
+    width: 167px;
+    font-size: 20px;
+    font-weight: 200;
+}
+#error {
+    margin: 26px;
+    font-weight: 700;
+}
+#user-input,
+#error {
+    visibility: hidden;
+}
+
+#last-guess,
+#hot-cold,
+#error,
+#level-two {
+    font-size: 36px;
+    color: #929497;
+}
+
+#last-guess,
+#hot-cold {
+    margin: 26px;
+}
+
+#last-guess-num {
+    font-size: 160px;
+    color: #ED458B;
+}
+
+#guess:hover,
+#clear:hover,
+#reset:hover,
+#level-start:hover {
+    background-color: #ED458B;
+}
+
+#clear:disabled,
+#reset:disabled {
+    background-color: #D0D2D3;
+}
+
+#reset {
+    position: relative;
+    bottom: 5px;
+    border-radius: 15px;
+    height: 30px;
+    width: 350px;
+    color: white;
+    background-color: #929497;
+    font-size: 20px;
+    font-weight: 200;
+
+}
+
+#winner {
+    display: inline-block;
+    visibility: hidden;
+}
+
+#winner img {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+
+}
+
+#img-left {
+    position: absolute;
+    top: 300px;
+    left: 130px;
+    text-align: left;
+}
+#img-right{
+    position: absolute;
+    top: 300px;
+    right: 130px;
+    text-align: right;
+}
+
+.cold {
+    background-image: url(images/snow.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.winner-guess {
+    background-image: url(images/campfire-flames.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#level-start {
+    visibility: hidden;
+}
+
+
+
+
