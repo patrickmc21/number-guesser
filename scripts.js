@@ -86,6 +86,14 @@ function logic (){
                 backgroundAdd ('winner-guess');
                 levelUp.style.visibility = 'visible';
                 levelUp.innerText = 'Start Level 2';
+                randomNum = 0;
+                console.log(randomNum + ' one');
+                storeRandom(200, 100);
+                console.log(randomNum + ' two');
+                levelUp.addEventListener('click', 
+                    function(event){
+                        event.preventDefault()
+                    });    
                 levelUp.addEventListener('click', levelTwo);
             }else if (guessedNumber > randomNum) {
                 guessDeclaration.innerText = 'Your guess is too high';
@@ -151,10 +159,10 @@ function contextCorrectTwo (){
         activeButton ();
         visible;
         error.innerText = userInput.value + ' is not a whole number';   
-    }else if (((guessedNumber < -10) || (guessedNumber > 110)) == true) {
+    }else if (((guessedNumber < 100) || (guessedNumber > 200)) == true) {
         activeButton();
         visible;
-        error.innerText = 'Pick a number between -10 and 110';    
+        error.innerText = 'Pick a number between 100 and 200';    
     }else { 
         activeButton();
         error.style.visibility = 'hidden';
@@ -186,14 +194,19 @@ function logicTwo (){
         };
 
 function levelTwo (){
-                    randomNum = 0;
-                    interactiveZone.style.visibility = 'hidden';
-                    backgroundRemove ('winner-guess');
-                    levelUp.style.visibility = 'hidden';
-                    storeRandom(200, 100);
-                    console.log(randomNum);
-                    contextCorrectTwo ();
-                };
+    // function(event){
+    //     event.preventDefault();
+    // };
+    // randomNum = 0;
+    clickGuess.addEventListener('click', contextCorrectTwo);
+    clear ();
+    interactiveZone.style.visibility = 'hidden';
+    backgroundRemove ('winner-guess');
+    levelUp.style.visibility = 'hidden';
+    // storeRandom(200, 100);
+    // console.log(randomNum);
+    contextCorrectTwo ();
+};
 
 
 
