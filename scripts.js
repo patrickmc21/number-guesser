@@ -51,6 +51,28 @@ function storeRandom (x,y) {
     return randomNum;
 }
 
+function reset () {
+    interactiveZone.style.visibility = 'hidden';
+    backgroundRemove ('cold');
+    backgroundRemove ('winner-guess');
+    storeRandom(100,0);
+    levelUp.style.visibility = 'hidden';
+    disableButton();
+}
+
+function clear (){
+    userInput.value = '';
+    clickClear.disabled = true;
+    backgroundRemove ('cold');   
+};
+
+function disableButton (){        
+if (userInput.value == '') {
+    clickClear.disabled = true;
+    clickReset.disabled = true;
+};
+}
+
 function activate (){
             userSelection.innerText = userInput.value;
             interactiveZone.style.visibility = 'visible';
@@ -77,13 +99,6 @@ function logic (){
             console.log(randomNum + ' rando');
             console.log(guessedNumber + ' user input');
         };
-
-function disableButton (){        
-if (userInput.value == '') {
-    clickClear.disabled = true;
-    clickReset.disabled = true;
-};
-}
 
 function contextCorrect (){
     var el = (isNaN (parseInt(userInput.value)));
@@ -115,6 +130,8 @@ function contextCorrect (){
         logic();           
     }
 };
+
+// Level two 
 
 function contextCorrectTwo (){
     var el = (isNaN(parseInt(userInput.value)));
@@ -176,33 +193,9 @@ function levelTwo (){
                     storeRandom(200, 100);
                     console.log(randomNum);
                     contextCorrectTwo ();
-                }
+                };
 
-function reset () {
-    interactiveZone.style.visibility = 'hidden';
-    backgroundRemove ('cold');
-    backgroundRemove ('winner-guess');
-    storeRandom(100,0);
-    levelUp.style.visibility = 'hidden';
-    disableButton();
-}
 
-function clear (){
-    userInput.value = '';
-    clickClear.disabled = true;
-    backgroundRemove ('cold');   
-};
 
-// storeRandom (100, 0);
-// disableButton();
-// num.addEventListener('keyup', function(){
-//     clickClear.disabled = false;
-// })
 
-// clickGuess.addEventListener('click', function(event){
-//     event.preventDefault()
-// });    
-// clickGuess.addEventListener('click', contextCorrect);
-// clickClear.addEventListener('click', clear);
-// clickReset.addEventListener('click', reset);
 
