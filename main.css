@@ -42,7 +42,6 @@ h1 {
         font-weight: 300;
 }
 
-
 #num {
     height: 30px;
     width: 350px;
@@ -92,10 +91,12 @@ h1 {
     font-size: 20px;
     font-weight: 200;
 }
+
 #error {
     margin: 26px;
     font-weight: 700;
 }
+
 #user-input,
 #error {
     visibility: hidden;
@@ -154,15 +155,10 @@ h1 {
     background-image: url(images/campfire-flames.gif);
     background-repeat: no-repeat;
     background-size: cover;
-
 }
 
 #level-start {
     visibility: hidden;
-}
-
-.game-over {
-
 }
 
 
