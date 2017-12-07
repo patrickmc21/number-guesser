@@ -1,5 +1,7 @@
 var max = 100
 var min = 1
+var randomNum = 0;
+var currentLevel = 'Level ' + levelCounter;
 var clickGuess = document.getElementById('guess');
 var clickClear = document.getElementById('clear');
 var clickReset = document.getElementById('reset');
@@ -8,15 +10,12 @@ var userInput = document.getElementById('num');
 var guessDeclaration = document.getElementById('hot-cold');
 var interactiveZone = document.getElementById('user-input');
 var error = document.getElementById('error')
-var randomNum = 0;
 var clickRandom = document.getElementById('generate-random');
 var form = document.querySelector('form');
 var levelUp = document.getElementById('level-start');
 var maxLevel = document.getElementById('final-level');
 var userMin = document.getElementById('min');
 var userMax = document.getElementById('max');
-var levelCounter = 1
-var currentLevel = 'Level ' + levelCounter;
 var playground = document.querySelector('h2');
 
 storeRandom ();
@@ -68,7 +67,6 @@ function reset () {
     interactiveZone.style.visibility = 'hidden';
     maxLevel.style.visibility = 'hidden';
     levelCounter = 1
-    currentLevel = 'level ' + levelCounter;
     max = 100
     min = 1
     backgroundRemove ('cold');
@@ -119,7 +117,6 @@ function logic (){
     if (guessedNumber == randomNum) {
         userInput.value = '';
         levelCounter = levelCounter + 1
-        currentLevel = 'level ' + levelCounter;
         guessDeclaration.innerText = 'BOOM!';
         backgroundRemove ('cold');
         backgroundAdd ('winner-guess');
