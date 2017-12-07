@@ -7,43 +7,44 @@
      </head>
         <body>
             <form>
-                <header>
+                <header role ="banner" tabindex="1">
                     <h1 class="num">Number</h1>
                     <h1 class="guess">Guesser</h1>
                     <h2></h2>
                 </header>
-                <main>
+                <main role = "main">
                         <section>
-                            <p id = "error"></p>
-                            <article id="final-level">
+                            <p id = "error" tabindex="2"></p>
+                            <article id="final-level" tabindex="3">
                                 <label for ="min"> Min: </label>
-                                <input type="number" name="minimum" id="min" size ="4">
+                                <input type="number" name="minimum value" id="min" size ="4">
                                 <label for="max">Max:</label>
-                                <input type="number" name="maximum" id="max" size="4">   
+                                <input type="number" name="maximum value" id="max" size="4">   
                             </article>
                             <article id="top">
-                                <input type="text" name="number-entry" id="num" placeholder="Enter your guess">
+                                <input type="text" name="Enter your guess" id="num" placeholder="Enter your guess" tabindex="4">
                                 <br>
                             <article>
-                                <input type="submit" id="guess" value="Guess">
-                                <input type="reset" id="clear" value="Clear">
+                                <input type="submit" id="guess" value="Guess" name="Submit your guess" tabindex="5">
+                                <input type="reset" id="clear" value="Clear" name="clear the guess input field" tabindex="7">
                             </article>
-                            <button id="level-start"></button>
+                            <button id="level-start" name="Proceed to next level" tabindex="6"></button>
                             </article>
                         </section>
-                        <section id="user-input">
+                        <section id="user-input" tabindex="5">
                             <article id="last-guess">
-                                <p> Your last guess was</p>
+                                <p > Your last guess was</p>
                             </article>
                             <article id="last-guess-num">
-                                <p id="user-guess"></p>
+                                <p id="user-guess" ></p>
                             </article>
-                            <article id="declaration"> <p id="hot-cold"></p>
+                            <article id="declaration"> 
+                                <p id="hot-cold" ></p>
                             </article>
                         </section>
                 </main>
                 <footer>
-                    <button type="reset" id="reset"> Reset</button>
+                    <button type="reset" id="reset" name="Reset to start" tabindex="8"> Reset</button>
                 </footer>
         </form>
             <script type="text/javascript" src="scripts.js"></script>
