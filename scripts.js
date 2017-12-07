@@ -14,11 +14,12 @@ var randomNum = 0;
 var clickRandom = document.getElementById('generate-random');
 var form = document.querySelector('form');
 var levelUp = document.getElementById('level-start');
-var maxLevel = document.getElementById('level-three-input');
+var maxLevel = document.getElementById('final-level');
 var userMin = document.getElementById('min');
 var userMax = document.getElementById('max');
 var levelCounter = 1
 var currentLevel = 'Level ' + levelCounter;
+var playground = document.querySelector('h2');
 
 // functions run on page load
 
@@ -75,7 +76,12 @@ function reset () {
     levelUp.style.visibility = 'hidden';
     guessDeclaration.visibility = 'hidden';
     disableButton();
-    levelUp.removeEventListener('click', levelThree);
+    levelUp.removeEventListener('click', levelTwo);
+    levelUp.removeEventListener('click',levelThree);
+    levelUp.removeEventListener('click',levelFour);
+    levelUp.removeEventListener('click',finalLevel);
+    playground.classList.remove('last-level');
+    playground.innerText = '';
 }
 
 function clear (){
@@ -95,41 +101,6 @@ function activate (){
             userSelection.innerText = userInput.value;
             interactiveZone.style.visibility = 'visible';
         };
-
-function logic (){
-            var guessedNumber = parseInt(userInput.value);          
-            if (guessedNumber == randomNum) {
-                userInput.value = '';
-                levelCounter = levelCounter + 1
-                console.log(levelCounter + ' lc')
-                currentLevel = 'level ' + levelCounter;
-                guessDeclaration.innerText = 'BOOM!';
-                backgroundRemove ('cold');
-                backgroundAdd ('winner-guess');
-                levelUp.style.visibility = 'visible';
-                levelUp.innerText = 'Proceed to ' + currentLevel;
-                levelUp.addEventListener('click', 
-                    function(event){
-                        event.preventDefault()
-                    });    
-                if (levelCounter < 3) {
-                    levelUp.addEventListener('click', levelTwo);
-                }else  {
-                    levelUp.addEventListener('click', levelThree);
-                }
-            }else if (guessedNumber > randomNum) {
-                guessDeclaration.innerText = 'Your guess is too high';
-                backgroundAdd ('cold');
-            }else if (guessedNumber < randomNum) {
-                guessDeclaration.innerText = 'Your guess is too low';
-                backgroundAdd ('cold');
-            }else {
-                console.log('fail');
-            }
-            console.log(randomNum + ' rando');
-            console.log(guessedNumber + ' user input');
-        };
-
 function contextCorrect (){
     var el = (isNaN (parseInt(userInput.value)));
     // var error = document.getElementById('error')
@@ -161,12 +132,54 @@ function contextCorrect (){
     }
 };
 
+function logic (){
+            var guessedNumber = parseInt(userInput.value);          
+            if (guessedNumber == randomNum) {
+                userInput.value = '';
+                levelCounter = levelCounter + 1
+                console.log(levelCounter + ' lc')
+                currentLevel = 'level ' + levelCounter;
+                guessDeclaration.innerText = 'BOOM!';
+                backgroundRemove ('cold');
+                backgroundAdd ('winner-guess');
+                levelUp.style.visibility = 'visible';
+                levelUp.innerText = 'Proceed to ' + currentLevel;
+                levelUp.addEventListener('click', 
+                    function(event){
+                        event.preventDefault()
+                    });    
+                if (levelCounter === 2) {
+                    levelUp.addEventListener('click', levelTwo);
+                }else if (levelCounter === 3) {
+                    levelUp.addEventListener('click', levelThree);
+                }else if (levelCounter === 4) {
+                    levelUp.addEventListener('click', levelFour);
+                }else  if (levelCounter === 5) {
+                    levelUp.addEventListener('click', finalLevel);
+                }else {
+                    levelUp.style.visibility = 'hidden';
+                }
+            }else if (guessedNumber > randomNum) {
+                guessDeclaration.innerText = 'Your guess is too high';
+                backgroundAdd ('cold');
+            }else if (guessedNumber < randomNum) {
+                guessDeclaration.innerText = 'Your guess is too low';
+                backgroundAdd ('cold');
+            }else {
+                console.log('fail');
+            }
+            console.log(randomNum + ' rando');
+            console.log(guessedNumber + ' user input');
+        };
+
 // Level two start
 
 function levelTwo (){
+    playground.classList.add('last-level');
+    playground.innerText = 'Level 2';
     console.log(currentLevel);
     max = 200
-    min = 101
+    min = 1
     randomNum = 0;
     console.log(randomNum + ' one');
     storeRandom();
@@ -180,6 +193,40 @@ function levelTwo (){
 // Level Three
 
 function levelThree (){
+    playground.classList.add('last-level');
+    playground.innerText = 'Level 3';
+    console.log(currentLevel);
+    max = 300
+    min = 1
+    randomNum = 0;
+    console.log(randomNum + ' one');
+    storeRandom();
+    console.log(randomNum + ' two');
+    clear ();
+    interactiveZone.style.visibility = 'hidden';
+    backgroundRemove ('winner-guess');
+    levelUp.style.visibility = 'hidden';
+};
+
+function levelFour (){
+    playground.classList.add('last-level');
+    playground.innerText = 'Level 4';
+    console.log(currentLevel);
+    max = 400
+    min = 1
+    randomNum = 0;
+    console.log(randomNum + ' one');
+    storeRandom();
+    console.log(randomNum + ' two');
+    clear ();
+    interactiveZone.style.visibility = 'hidden';
+    backgroundRemove ('winner-guess');
+    levelUp.style.visibility = 'hidden';
+};
+
+function finalLevel (){
+    playground.classList.add('last-level');
+    playground.innerText = 'Playground';
     maxLevel.style.visibility = 'visible';
     max = 0
     min = 0
@@ -195,6 +242,10 @@ function levelThree (){
     })
     console.log(randomNum + ' level 3 rando');
     clear ();
+    clickClear.addEventListener('click', function (){
+        backgroundRemove('winner-guess');
+        interactiveZone.style.visibility = 'hidden';
+    });
     interactiveZone.style.visibility = 'hidden';
     backgroundRemove ('winner-guess');
     levelUp.style.visibility = 'hidden';

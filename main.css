@@ -52,13 +52,20 @@ h1 {
     color: #929497;
 }
 
-#level-three-input {
+#final-level {
     margin: auto;
     height: 30px;
     width: 350px;
     font-size: 24px;
     font-weight: 300;
     color: #929497;
+    visibility: hidden;
+}
+
+.last-level {
+    color: #ED458B;
+    font-size: 44px;
+    font-weight: 700;
 }
 
 #min,
