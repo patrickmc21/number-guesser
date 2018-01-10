@@ -11,6 +11,7 @@ body {
     padding: 0; 
     text-align: center;
 }
+
 header {
     position: relative;
     top: 0;
@@ -149,7 +150,6 @@ h1 {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 
 .winner-guess {
     background-image: url(images/campfire-flames.gif);
